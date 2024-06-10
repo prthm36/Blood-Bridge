@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Blood Bridge - connect the donors</title>
+
+		<link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
+
+		<link rel="stylesheet" href="./assets/css/style.css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Roboto:wght@400;500;600&display=swap"
+			rel="stylesheet" />
+		<style>
+			.popup {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				padding: 20px;
+				background: linear-gradient(135deg, #ffffff, #a3d2ee);
+				color: #0e254e;
+				font-size: 16px;
+				z-index: 9999;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+			}
+		</style>
+		<script>
+			//  popup message
+			function showPopup(message) {
+				const popup = document.createElement("div");
+				popup.className = "popup";
+				popup.textContent = message;
+				document.body.appendChild(popup);
+
+				//  close the popup auto
+				setTimeout(function () {
+					popup.remove();
+				}, 3000);
+			}
+		</script>
+	</head>
+
+	<body id="top">
+		<header class="header">
+			<div class="header-top">
+				<div class="container">
+					<ul class="contact-list">
+						<li class="contact-item">
+							<ion-icon name="mail-outline"></ion-icon>
+							<a
+								href="mailto:amitbob060@gmail.com"
+								class="contact-link"
+								>amitbob060@gmail.com</a
+							>
+						</li>
+						<li class="contact-item">
+							<ion-icon name="call-outline"></ion-icon>
+							<a href="tel:8091727833" class="contact-link"
+								>8091727833</a
+							>
+						</li>
+					</ul>
+					<ul class="social-list">
+						<li>
+							<a
+								href="https://www.facebook.com/jatt.lavley?mibextid=ZbWKwL"
+								class="social-link">
+								<ion-icon name="logo-facebook"></ion-icon>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.instagram.com/itzz_illusion?igsh=NXdkcDB4Y2cwMnh1"
+								class="social-link">
+								<ion-icon name="logo-instagram"></ion-icon>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://youtube.com/@overthinker5982?si=DMsGB-hFKrR7AhK9"
+								class="social-link">
+								<ion-icon name="logo-youtube"></ion-icon>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="header-bottom" data-header>
+				<div class="container">
+					<a href="#" class="logo">Blood Bridge</a>
+					<nav class="navbar container" data-navbar>
+						<ul class="navbar-list">
+							<li>
+								<a
+									href="index.html"
+									class="navbar-link"
+									data-nav-link
+									>Home</a
+								>
+							</li>
+							<li>
+								<a
+									href="#service"
+									class="navbar-link"
+									data-nav-link
+									>Find donor</a
+								>
+							</li>
+							<li>
+								<a
+									href="#about"
+									class="navbar-link"
+									data-nav-link
+									>About Us</a
+								>
+							</li>
+							<li>
+								<a
+									href="#blog"
+									class="navbar-link"
+									data-nav-link
+									>Blog</a
+								>
+							</li>
+							<li>
+								<a
+									href="php/contact.php"
+									class="navbar-link"
+									data-nav-link
+									>Contact</a
+								>
+							</li>
+						</ul>
+					</nav>
+					<a href="php/register.php" class="btn">Login / Register</a>
+					<button
+						class="nav-toggle-btn"
+						aria-label="Toggle menu"
+						data-nav-toggler>
+						<ion-icon
+							name="menu-sharp"
+							aria-hidden="true"
+							class="menu-icon"></ion-icon>
+						<ion-icon
+							name="close-sharp"
+							aria-hidden="true"
+							class="close-icon"></ion-icon>
+					</button>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<article>
+				<section
+					class="section hero"
+					id="home"
+					style="background-image: url('./assets/images/hero-bg.png')"
+					aria-label="hero">
+					<div class="container">
+						<div class="hero-content">
+							<img
+								src="assets/images/blood-icon.png"
+								alt="ICON"
+								width="70"
+								height="70" />
+							<p class="section-subtitle">
+								Welcome To Blood Bridge
+							</p>
+							<h1 class="h1 hero-title">
+								Connecting The Donors...
+							</h1>
+							<p class="hero-text">
+								Our mission is to bridge the gap between blood
+								donors and recipients, providing a seamless and
+								efficient experience for both parties. You can
+								trust us, we provide the best service...
+							</p>
+							<form action="" class="hero-form" method="POST">
+								<input
+									type="email"
+									name="email_address"
+									aria-label="email"
+									placeholder="Your Email Address..."
+									required
+									class="email-field" />
+								<button type="submit" class="btn">
+									Get Response Back
+								</button>
+							</form>
+						</div>
+						<figure class="hero-banner">
+							<img
+								src="./assets/images/hero-banner.png"
+								width="587"
+								height="839"
+								alt="hero banner"
+								class="w-100" />
+						</figure>
+					</div>
+				</section>
+
+				<section
+					class="section service"
+					id="service"
+					aria-label="service">
+					<div class="container">
+						<p class="section-subtitle text-center">
+							Find the best Donor For You
+						</p>
+						<h2 class="h2 section-title text-center">FIND DONOR</h2>
+						
+						<!-- Replace content with your form -->
+						<form class="donor-form">
+							<div class="form-group">
+								<label for="name">Name:</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									required />
+							</div>
+
+							<div class="form-group">
+								<label for="phone">Phone:</label>
+								<input
+									type="tel"
+									id="phone"
+									name="phone"
+									required />
+							</div>
+
+							<div class="form-group">
+								<label for="email">Email:</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									required />
+							</div>
+
+							<div class="form-group">
+								<label for="blood-type">Blood Type:</label>
+								<select id="blood-type" name="blood-type">
+									<option value="A+">A+</option>
+									<option value="A-">A-</option>
+									<option value="B+">B+</option>
+									<option value="B-">B-</option>
+									<option value="AB+">AB+</option>
+									<option value="AB-">AB-</option>
+									<option value="O+">O+</option>
+									<option value="O-">O-</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="city">City:</label>
+								<input
+									type="text"
+									id="city"
+									name="city"
+									required />
+							</div>
+
+							<div class="form-group">
+								<label for="state">State:</label>
+								<input
+									type="text"
+									id="state"
+									name="state"
+									required />
+							</div>	
+							<button type="submit" class="btn" >
+								Find Donor
+							</button>
+						</form>
+					</div>
+				</section>
+
+				<!--about page-->
+				<section class="section about" id="about" aria-label="about">
+					<div class="container">
+						<figure class="about-banner">
+							<img
+								src="./assets/images/about-banner.png"
+								width="470"
+								height="538"
+								loading="lazy"
+								alt="about banner"
+								class="w-100" />
+						</figure>
+						<div class="about-content">
+							<p class="section-subtitle">About Us</p>
+							<h2 class="h2 section-title">
+								We Care For Your Loved Ones ꨄ︎
+							</h2>
+							<p class="section-text section-text-1">
+								At Blood Bridge, we are passionate about
+								connecting blood donors with recipients and
+								bridging the gap in the healthcare industry. Our
+								mission is to provide a seamless and efficient
+								experience for both donors and recipients,
+								ensuring timely access to life-saving blood
+								transfusions.
+							</p>
+							<p class="section-text">
+								We strive to create a community that fosters
+								empathy, support, and solidarity among
+								individuals who are committed to making a
+								difference. Whether you're a potential donor or
+								someone in need of blood, we are here to assist
+								you every step of the way.
+							</p>
+							<a href="about.html" class="btn"
+								>Read more About Us</a
+							>
+						</div>
+					</div>
+				</section>
+
+				<!--services page-->
+
+				<section class="section doctor" aria-label="doctor">
+					<div class="container">
+						<p class="section-subtitle text-center">Emergency !</p>
+						<h2 class="h2 section-title text-center">
+							Our other services
+						</h2>
+						<ul class="has-scrollbar">
+							<li class="scrollbar-item">
+								<div class="doctor-card">
+									<div
+										class="card-banner img-holder"
+										style="--width: 460; --height: 500">
+										<img
+											src="./assets/images/doctor-1.png"
+											width="460"
+											height="500"
+											loading="lazy"
+											alt="PREBOOK"
+											class="img-cover" />
+									</div>
+									<h3 class="h3">
+										<a href="#" class="card-title"
+											>Pre Book Blood</a
+										>
+									</h3>
+									<p class="card-subtitle">
+										Book Blood For An upcoming Date
+									</p>
+									<ul class="card-social-list">
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-facebook"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-twitter"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-instagram"></ion-icon>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="scrollbar-item">
+								<div class="doctor-card">
+									<div
+										class="card-banner img-holder"
+										style="--width: 460; --height: 500">
+										<img
+											src="./assets/images/doctor-2.png"
+											width="460"
+											height="500"
+											loading="lazy"
+											alt="AMBULANCE"
+											class="img-cover" />
+									</div>
+									<h3 class="h3">
+										<a href="#" class="card-title"
+											>Call Ambulance</a
+										>
+									</h3>
+									<p class="card-subtitle">
+										Get our ambulance service
+									</p>
+									<ul class="card-social-list">
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-facebook"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-twitter"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-instagram"></ion-icon>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="scrollbar-item">
+								<div class="doctor-card">
+									<div
+										class="card-banner img-holder"
+										style="--width: 460; --height: 500">
+										<img
+											src="./assets/images/doctor-3.png"
+											width="460"
+											height="500"
+											loading="lazy"
+											alt="WHY DONATE ?"
+											class="img-cover" />
+									</div>
+									<h3 class="h3">
+										<a href="#" class="card-title"
+											>Why Donate ?</a
+										>
+									</h3>
+									<p class="card-subtitle">
+										Why donate blood ?
+									</p>
+									<ul class="card-social-list">
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-facebook"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-twitter"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-instagram"></ion-icon>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li class="scrollbar-item">
+								<div class="doctor-card">
+									<div
+										class="card-banner img-holder"
+										style="--width: 460; --height: 500">
+										<img
+											src="./assets/images/doctor-4.png"
+											width="460"
+											height="500"
+											loading="lazy"
+											alt="CAN YOU DONATE"
+											class="img-cover" />
+									</div>
+									<h3 class="h3">
+										<a
+											href="canyoudonate.html"
+											class="card-title"
+											>Can You Donate ?</a
+										>
+									</h3>
+									<p class="card-subtitle">
+										Check that can you donate blood
+									</p>
+									<ul class="card-social-list">
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-facebook"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-twitter"></ion-icon>
+											</a>
+										</li>
+										<li>
+											<a
+												href="#"
+												class="card-social-link">
+												<ion-icon
+													name="logo-instagram"></ion-icon>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+
+				<!--Latest Updates-->
+				<section class="section blog" id="blog" aria-label="blog">
+					<div class="container">
+						<p class="section-subtitle text-center">Our Blog</p>
+						<h2 class="h2 section-title text-center">
+							Latest Updates & News
+						</h2>
+						<ul class="blog-list">
+							<li> 	
+								<div class="blog-card">
+									<figure
+										class="card-banner img-holder"
+										style="--width: 1180; --height: 800">
+										<img
+											src="./assets/images/update1.jpg"
+											width="1180"
+											height="800"
+											loading="lazy"
+											alt="Cras accumsan nulla nec lacus ultricies placerat."
+											class="img-cover" />
+										<div class="card-badge">
+											<ion-icon
+												name="calendar-outline"></ion-icon>
+											<time
+												class="time"
+												datetime="2023-06-14"
+												>14th June 2023</time
+											>
+										</div>
+									</figure>
+									<div class="card-content">
+										<h3 class="h3">
+											<a href="https://economictimes.indiatimes.com/news/how-to/blood-donation-who-can-donate-who-cant-and-what-are-the-rules-for-blood-donation/articleshow/100983529.cms" class="card-title"
+												>Blood Donation: Who can donate, who can't, and what are the rules for blood donation?
+												</a
+											>
+										</h3>
+										<p class="card-text">
+											Blood donation is a noble act that saves countless lives every day. By donating..
+										</p>
+										<a href="https://economictimes.indiatimes.com/news/how-to/blood-donation-who-can-donate-who-cant-and-what-are-the-rules-for-blood-donation/articleshow/100983529.cms" class="card-link"
+											>Read More</a
+										>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="blog-card">
+									<figure
+										class="card-banner img-holder"
+										style="--width: 1180; --height: 800">
+										<img
+											src="./assets/images/update2.jpeg"
+											width="1180"
+											height="800"
+											loading="lazy"
+											alt="Dras accumsan nulla nec lacus ultricies placerat."
+											class="img-cover" />
+										<div class="card-badge">
+											<ion-icon
+												name="calendar-outline"></ion-icon>
+											<time
+												class="time"
+												datetime="2023-06-29"
+												>29th June 2023</time
+											>
+										</div>
+									</figure>
+									<div class="card-content">
+										<h3 class="h3">
+											<a href="https://health.economictimes.indiatimes.com/news/industry/ways-to-address-indias-blood-donation-and-supply-crisis/101351499" class="card-title"
+												>Ways to address India’s blood donation and supply crisis</a>
+										</h3>
+										<p class="card-text">
+
+											India experiences up to 12,000 patient deaths each day as a result of delayed ac ..
+
+										</p>
+										<a href="https://health.economictimes.indiatimes.com/news/industry/ways-to-address-indias-blood-donation-and-supply-crisis/101351499" class="card-link"
+											>Read More</a
+										>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="blog-card">
+									<figure
+										class="card-banner img-holder"
+										style="--width: 1180; --height: 800">
+										<img
+											src="./assets/images/update 3.jpg"
+											width="1180"
+											height="800"
+											loading="lazy"
+											alt="Seas accumsan nulla nec lacus ultricies placerat."
+											class="img-cover" />
+										<div class="card-badge">
+											<ion-icon
+												name="calendar-outline"></ion-icon>
+											<time
+												class="time"
+												datetime="2022-09-12"
+												>13th Sept 2022</time
+											>
+										</div>
+									</figure>
+									<div class="card-content">
+										<h3 class="h3">
+											<a href="https://www.hindustantimes.com/india-news/mega-blood-donation-drive-to-celebrate-pm-modi-s-birthday-101663008086217.html" class="card-title"
+												>Mega blood donation drive to celebrate PM Modi’s birthday</a
+											>
+										</h3>
+										<p class="card-text">
+											On the occasion of Prime Minister Narendra Modi’s birthday on September 17, Union health ministry will start a mega drive for voluntary.. 
+										</p>
+										<a href="https://www.hindustantimes.com/india-news/mega-blood-donation-drive-to-celebrate-pm-modi-s-birthday-101663008086217.html" class="card-link"
+											>Read More</a
+										>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</section>
+			</article>
+		</main>
+
+		<!--FOOTER-->
+		<footer class="footer">
+			<div class="footer-top section">
+				<div class="container">
+					<div class="footer-brand">
+						<a href="#" class="logo">Blood Bridge</a>
+						<p class="footer-text">
+							We are passionate about connecting blood donors with
+							recipients and bridging the gap in the healthcare
+							industry. We strive to create a community that
+							fosters empathy, support, and solidarity among
+							individuals who are committed to making a
+							difference.
+						</p>
+						<div class="schedule">
+							<div class="schedule-icon">
+								<ion-icon name="time-outline"></ion-icon>
+							</div>
+							<span class="span">
+								24 X 7:<br />
+								365 Days
+							</span>
+						</div>
+					</div>
+					<ul class="footer-list">
+						<li>
+							<p class="footer-list-title">Other Links</p>
+						</li>
+						<li>
+							<a href="index.html" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">Home</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">Find donor</span>
+							</a>
+						</li>
+						<li>
+							<a href="about.html" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">About us</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">Blog</span>
+							</a>
+						</li>
+						<li>
+							<a href="php/contact.php" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">Contact</span>
+							</a>
+						</li>
+						<li>
+							<a href="php/login.php" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">Login / Register</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="footer-list">
+						<li>
+							<p class="footer-list-title">Our Services</p>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="footer-link">
+								<ion-icon name="add-outline"></ion-icon>
+								<span class="span">xxxxxxxxx</span>
+							</a>
+						</li>
+					</ul>
+					<ul class="footer-list">
+						<li>
+							<p class="footer-list-title">Contact Us</p>
+						</li>
+
+						<li class="footer-item">
+							<div class="item-icon">
+								<ion-icon name="call-outline"></ion-icon>
+							</div>
+							<a href="tel:8091727833" class="footer-link"
+								>8091727833</a
+							>
+						</li>
+						<li class="footer-item">
+							<div class="item-icon">
+								<ion-icon name="mail-outline"></ion-icon>
+							</div>
+							<a
+								href="mailto:amitbob060@gmail.com"
+								class="footer-link"
+								>amitbob060@gmail.com</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<p class="copyright">
+						&copy; All Rights Reserved by Blood Bridge
+					</p>
+					<ul class="social-list">
+						<li>
+							<a
+								href="https://www.facebook.com/"
+								class="social-link">
+								<ion-icon name="logo-facebook"></ion-icon>
+							</a>
+						</li>
+						<li>
+							<a
+								href="https://www.instagram.com/"
+								class="social-link">
+								<ion-icon name="logo-instagram"></ion-icon>
+							</a>
+						</li>
+						<li>
+							<a href="https://twitter.com/" class="social-link">
+								<ion-icon name="logo-twitter"></ion-icon>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+
+		<?php
+
+		<!--BACK TO TOP-->
+		<a
+			href="#top"
+			class="back-top-btn"
+			aria-label="back to top"
+			data-back-top-btn>
+			<ion-icon name="caret-up" aria-hidden="true"></ion-icon>
+		</a>
+
+		<!--custom js link-->
+		<script src="./assets/js/script.js" defer></script>
+		<!--ionicon link-->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	</body>
+</html>
